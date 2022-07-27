@@ -10,13 +10,11 @@
 ## Rails Appを起動
 
 ```
-bin/rails s
+bin/dev
 ```
 
 - http://localhost:3000/ にアクセス
 
-
-WIP: `bin/dev` で起動してCSSとかJS周りをいい感じにする
 
 ## geth起動
 
