@@ -1,0 +1,6 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">新しくNFTを発行する</h1>
+  <%= form_with url: nfts_path do |f| %>
+    <%= f.submit "NFTを発行する", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <% end %>
+</div>

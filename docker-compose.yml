@@ -1,0 +1,20 @@
+version: '3'
+services:
+  blockchain:
+    image: ethereum/client-go
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+      - "30303:30303/udp"
+    command: [--http, --dev, --http.addr, 0.0.0.0]
+  web:
+    build: .
+    command: bundle exec rails s -b 0.0.0.0 -p 3000
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    environment:
+      GETH_URL: "http://blockchain:8545"
+    depends_on:
+      - blockchain

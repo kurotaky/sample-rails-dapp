@@ -1,0 +1,22 @@
+
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">発行したNFT一覧</h1>
+    <%= link_to "NFTをmintする", new_nft_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div class="min-w-full">
+    <p>コントラクト名: <%= @name %></p>
+    <p>シンボル: <%= @symbol %></p>
+    <% @nfts.each do |nft| %>
+      <%= link_to nft_path(nft["token_id"]) do %>
+        <%= image_tag nft["image"], class: "mt-6 rounded-lg" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
