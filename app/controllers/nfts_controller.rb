@@ -34,7 +34,8 @@ class NftsController < ApplicationController
   private
 
   def client
-    Eth::Client.create "http://localhost:8545"
+    url = ENV.fetch('GETH_URL', 'http://localhost:8545')
+    Eth::Client.create url
   end
 
   def contract

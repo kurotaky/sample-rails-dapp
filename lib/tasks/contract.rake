@@ -1,7 +1,8 @@
 namespace :contract do
   desc "サンプルのコントラクトをローカルブロックチェーンネットワークにデプロイする"
   task deploy_sample_nft: :environment do
-    client = Eth::Client.create "http://localhost:8545"
+    url = ENV.fetch('GETH_URL', 'http://localhost:8545')
+    client = Eth::Client.create url
     file = "contracts/SampleERC721.sol"
     contract = Eth::Contract.from_file(file:)
     address = client.deploy_and_wait(contract)

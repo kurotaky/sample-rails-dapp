@@ -1,12 +1,9 @@
-FROM ruby:3.1.2
+FROM --platform=linux/amd64 ruby:3.1.2
+ARG SOLC_VERSION=v0.8.15
 
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1C52189C923F6CA9
-#RUN apt-get update -qq && apt-get install -y software-properties-common
-#RUN add-apt-repository ppa:ethereum/ethereum
-RUN apt-get update -qq && apt-get install -y build-essential git libboost-all-dev cmake
-RUN git clone --depth 1 --recursive -b v0.8.15 https://github.com/ethereum/solidity && \
-  cd /solidity && cmake -DCMAKE_BUILD_TYPE=Release -DTESTS=0 -DSTATIC_LINKING=1 && \
-  cd /solidity && make solc && install -s solc/solc /usr/bin && cd / && rm -rf solidity
+RUN apt-get update -qq && apt-get install -y build-essential wget
+RUN wget --quiet --output-document /usr/local/bin/solc https://github.com/ethereum/solidity/releases/download/${SOLC_VERSION}/solc-static-linux \
+    && chmod a+x /usr/local/bin/solc
 
 RUN mkdir /myapp
 WORKDIR /myapp

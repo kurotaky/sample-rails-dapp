@@ -6,7 +6,7 @@ services:
       - "8545:8545"
       - "30303:30303"
       - "30303:30303/udp"
-    command: [--http, --dev, --http.addr, 0.0.0.0]
+    command: [--http, --dev, --http.addr, 0.0.0.0, --http.vhosts, "*"]
   web:
     build: .
     command: bundle exec rails s -b 0.0.0.0 -p 3000
@@ -18,3 +18,5 @@ services:
       GETH_URL: "http://blockchain:8545"
     depends_on:
       - blockchain
+    tty: true
+    stdin_open: true

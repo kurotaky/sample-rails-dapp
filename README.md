@@ -1,5 +1,7 @@
 # README
 
+[WEB+DB PRESS Vol.130](https://gihyo.jp/magazine/wdpress/archive/2022/vol130)の特集3「作って学ぶWeb3」ブロックチェーン，スマートコントラクト，NFTのサンプルコードです。
+
 ## Install
 
 - solidity
@@ -7,20 +9,28 @@
 
 をインストールします。
 
-## Rails Appを起動
+## Rails Appとgethを起動
 
-```
+### Rails serverを起動
+
+```bash
 bin/dev
 ```
 
-- http://localhost:3000/ にアクセス
+### geth起動
 
-
-## geth起動
-
-```sh
+```bash
 geth --dev --http
 ```
 
-## 参考資料
-- https://wizard.openzeppelin.com/#erc721
+http://localhost:3000/ にアクセス
+
+
+## Dockerで起動する
+
+```bash
+docker compose build
+docker compose up
+```
+
+http://localhost:3000/ にアクセス
