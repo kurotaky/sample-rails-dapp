@@ -4,8 +4,8 @@
 
 ## Install
 
-- solidity
-- geth
+- [Solidity](https://docs.soliditylang.org/en/v0.8.16/installing-solidity.html)
+- [Geth](https://geth.ethereum.org/docs/install-and-build/installing-geth)
 
 をインストールします。
 
