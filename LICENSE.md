@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Yuta Kurotaki
+Copyright (c) 2022 kurehajime, akht and kurotaky
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
