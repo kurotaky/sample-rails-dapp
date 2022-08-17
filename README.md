@@ -2,6 +2,8 @@
 
 [WEB+DB PRESS Vol.130](https://gihyo.jp/magazine/wdpress/archive/2022/vol130)の特集3「作って学ぶWeb3」ブロックチェーン，スマートコントラクト，NFTのサンプルコードです。
 
+3章のサンプルコードについては[こちら](https://github.com/kurotaky/sample-rails-dapp/tree/add_contract/contracts)にあります。
+
 ## Install
 
 - [Solidity](https://docs.soliditylang.org/en/v0.8.16/installing-solidity.html)
