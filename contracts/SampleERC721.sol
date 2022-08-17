@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity >=0.8.0 <0.9.0;
 
 import "contracts/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "contracts/openzeppelin-contracts/contracts/utils/Counters.sol";
@@ -11,7 +11,7 @@ contract SampleERC721 is ERC721URIStorage , Ownable {
     Counters.Counter private _current_token_id;
     string base_uri = "";
     constructor () ERC721 ("SampleERC721", "SMP721") {}
-    function mint () public returns (uint256) { 
+    function mint () public returns (uint256) {
         uint256 _token_id = _current_token_id.current();
         _mint(msg.sender, _token_id);
         _setTokenURI(_token_id, string(abi.encodePacked(_token_id.toString(), ".json")));
