@@ -32,6 +32,7 @@ http://localhost:3000/ にアクセス
 
 ```bash
 docker compose build
+docker compose run --rm web bin/rails assets:precompile
 docker compose up
 ```
 
